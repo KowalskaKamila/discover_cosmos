@@ -4,11 +4,11 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 const Title = () => {
     return (
-        <Container fluid>
-        <Row className="background">
+        <Container fluid className="r1">
+        <Row>
             <Col>
                 <div className="blinking_text">
-                    <h3 className="pt-3 mr-2">DISCOVER</h3>
+                    <h3 className="pt-3 mr-2">EXPLORE</h3>
                     <span id="C">C</span>
                     <span id="O1">O</span>
                     <span id="S1">S</span>

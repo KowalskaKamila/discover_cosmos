@@ -1,0 +1,40 @@
+.r4-news {
+    min-height: 90vh;
+}
+.r4-events{
+    min-height: 100vh;
+}
+.react-multiple-carousel__arrow--right {
+    right: 0px;
+    top: 25%;
+}
+.react-multiple-carousel__arrow--left{
+    left: 0px;
+    top: 25%;
+}
+.react-multi-carousel-item {
+    height: 600px;
+}
+.card-img-top {
+    width: 100%;
+    height: 15vw;
+    object-fit: cover;
+}
+.card-body {
+    color:black;
+}
+.card-body-events {
+    height: 22vw;
+}
+.card-body-news {
+    height: 12vw;
+}
+.positioning {
+    position: absolute;
+    bottom: 0;
+    margin-bottom: 10px;
+}
+.card-text:last-child {
+    margin-top:10px;
+    text-align: end;
+}

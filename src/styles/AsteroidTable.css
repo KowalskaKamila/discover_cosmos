@@ -1,0 +1,11 @@
+.r3 {
+    min-height: 140vh;
+}
+.table-dark.table-striped tbody tr:nth-of-type(odd) {
+    background-color: #e9e8ee !important;
+    color: black;
+}
+.table-dark {
+    color: #fff;
+    background-color: #054569 !important;
+}
