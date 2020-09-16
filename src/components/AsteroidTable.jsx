@@ -28,7 +28,8 @@ export default class AsteroidTable extends React.Component {
         const steroids_new_data = []
         for (let i=0; i < asteroids.length; i++ ) {
             const id = asteroids[i].neo_reference_id
-            const estimated_diameter = Math.round((asteroids[i].estimated_diameter.meters.estimated_diameter_min + asteroids[i].estimated_diameter.meters.estimated_diameter_max)/2).toString() + " meters"
+            const estimated_diameter = Math.round((asteroids[i].estimated_diameter.meters.estimated_diameter_min + 
+                                    asteroids[i].estimated_diameter.meters.estimated_diameter_max)/2).toString() + " meters"
             const name = asteroids[i].name;
             const velocity = Math.round(asteroids[i].close_approach_data[0].relative_velocity.kilometers_per_hour).toString() + " km/h"
             const close_approach_date_time = moment(asteroids[i].close_approach_data[0].close_approach_date_full).format("LLL")

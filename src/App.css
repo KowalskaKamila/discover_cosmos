@@ -29,8 +29,10 @@
 }
 
 .btn-primary {
-  background-color: #054569 !important;
-  border-color:  #054569 !important;
+  background-color:	white !important;
+  border: 2px solid black !important;
+  color: black !important;
+  font-weight: bold !important;
 }
 
 
