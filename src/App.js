@@ -97,33 +97,41 @@ export default class App extends React.Component {
     this.getEvents()
   }
   render() {
+    const rows= ["#image-of-the-day", "#real-time-asteroids", " #news", "#events", "#people-in-space"]
+    const titles= ["Image of the day", "Real time asteroids", "News", "Events", "People in space"]
     return (
       <div className="App background">
         <header className="App-header">
           <Container className="px-0" fluid>
             <Col>
+              <Row className="px-3 py-4 set-nav position-fixed">
+                { rows.map((row,index) =>(
+                  <span key={index} className="text-uppercase" ><a className="mx-3 nav-buttons" href={row}>{titles[index]}</a></span>
+                )
+                )}
+              </Row>
               <Row>
                 <Title/>
               </Row>
-              <Row>
+              <Row id="image-of-the-day">
                 <ImageOfTheDay/>
               </Row>
-              <Row>
+              <Row id="real-time-asteroids">
                 <AsteroidTable/>
               </Row>
-              <Row>
+              <Row id="news"> 
                 {this.state.newsAreLoding ?
                   <Spinner className="mx-auto my-5" animation="border"/> :
                   <Carousel carousel_items={this.state.news} title="News" isNews={true}/>
                 }
               </Row>
-              <Row>
+              <Row id="events">
                 {this.state.eventsAreLoding ?
                   <Spinner className="mx-auto my-5" animation="border"/> :
                   <Carousel carousel_items={this.state.events} title="Upcoming Events"/>
                 }
               </Row>
-              <Row>
+              <Row id="people-in-space">
                 <PeopleInSpace/>
               </Row>
             </Col>

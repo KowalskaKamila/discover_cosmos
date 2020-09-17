@@ -31,5 +31,18 @@
   font-weight: bold !important;
 }
 
+ a {
+  color: white !important;
+  text-decoration: none !important;
+}
+  
+a:hover {
+  color: grey !important; 
+}
 
+.set-nav {
+  z-index: 2;
+  background-color: black;
+  width: 100%;
+}
 
