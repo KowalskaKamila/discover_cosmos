@@ -32,7 +32,7 @@ export default class ImageOfTheDay extends React.Component {
                 <Row>
                     <Col className="text-center my-5">
                         <h1 className="text-uppercase"> Astronomy Picture of the Day </h1>
-                        <p> Each day a different image of our fascinating universe is featured, along with a brief explanation written by a professional astronomer. </p>
+                        <p className="mx-3"> Each day a different image of our fascinating universe is featured, along with a brief explanation written by a professional astronomer. </p>
                     </Col>
                 </Row>   
                 <Row className="mt-5">

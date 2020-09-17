@@ -3,6 +3,7 @@ import AsteroidTable from './components/AsteroidTable';
 import Carousel from './components/Carousel';
 import ImageOfTheDay from './components/ImageOfTheDay';
 import Title from './components/Title';
+import PeopleInSpace from './components/PeopleInSpace';
 import { Container, Row, Col, Spinner } from 'react-bootstrap';
 import axios from 'axios';
 import PropTypes from 'prop-types';
@@ -105,10 +106,7 @@ export default class App extends React.Component {
                 <Title/>
               </Row>
               <Row>
-                {this.state.picOfTheDayIsLoading ?
-                  <Spinner className="mx-auto my-5" animation="border"/> :
-                  <ImageOfTheDay/>
-                }
+                <ImageOfTheDay/>
               </Row>
               <Row>
                 <AsteroidTable/>
@@ -124,6 +122,9 @@ export default class App extends React.Component {
                   <Spinner className="mx-auto my-5" animation="border"/> :
                   <Carousel carousel_items={this.state.events} title="Upcoming Events"/>
                 }
+              </Row>
+              <Row>
+                <PeopleInSpace/>
               </Row>
             </Col>
           </Container>

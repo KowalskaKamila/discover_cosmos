@@ -66,7 +66,7 @@ export default class ImageOfTheDay extends React.Component {
                             { this.props.carousel_items.map((item,index) => (         
                                 <Card key={index} className="mx-2 border-0">
                                     <Card.Img variant="top" src={item.featured_image} />
-                                    <Card.Body className={`grey-blue-background ${this.props.isNews ? "card-body-news" : "card-body-events"}`}>
+                                    <Card.Body className={this.props.isNews ? "card-body-news" : "card-body-events"}>
                                         <Card.Title className="font-weight-bold">{item.title}</Card.Title>
                                             {!this.props.isNews  &&
                                                 <Card.Subtitle >

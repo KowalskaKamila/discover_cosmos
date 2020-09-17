@@ -46,7 +46,7 @@ export default class AsteroidTable extends React.Component {
                 potentiall_hazard = "Unable to access all data."
             }
             const asteroid = {"id":id, "name":name, "estimated_diameter":estimated_diameter, "close_approach_date_time":close_approach_date_time,
-                            "velocity":velocity, "distance_to_earth":distance_to_earth, "potentiall_hazard":potentiall_hazard};
+                              "velocity":velocity, "distance_to_earth":distance_to_earth, "potentiall_hazard":potentiall_hazard};
             steroids_new_data.push(asteroid)
      
         }
