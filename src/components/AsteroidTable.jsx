@@ -1,5 +1,5 @@
 import React from 'react';
-import { Table, Container, Row, Col } from 'react-bootstrap';
+import { Table, Container, Row, Col, Spinner } from 'react-bootstrap';
 import axios from 'axios';
 import '../styles/AsteroidTable.css';
 import moment from 'moment';
@@ -12,13 +12,15 @@ export default class AsteroidTable extends React.Component {
             headers : ["Asteroid Name", "Estimated Diameter", "Close Approach Date & Time", "Velocity", "Distance to Earth", "Potentiall hazard"],
             asteroids_data: [],
             table_data : [],
-
+            asteroidDataIsLoading: false
         };
     }
 
     async asteoridWatch() {
+        this.setState({asteroidDataIsLoading: true})
         const today = moment().format("YYYY-MM-DD")
         const response = await axios.get("https://api.nasa.gov/neo/rest/v1/feed?start_date="+ today + "&end_date=" + today + "&api_key=rRrzSpxY8WVmhsmfYml0fXtSq5bLhTVBb7rhjL8v")
+        this.setState({asteroidDataIsLoading: false})
         this.setState({asteroids_data: response.data.near_earth_objects[today]})
         this.setTableData()
     }
@@ -67,29 +69,32 @@ export default class AsteroidTable extends React.Component {
                     </Col>
                 </Row>
                 <Row>
-                    <Col>
-                        <Table striped borderless variant="dark" className="w-100">
-                            <thead>
-                            <tr>
-                                { this.state.headers.map((header, index) => (
-                                    <th key={index}>{header}</th>
-                                )) }    
-                            </tr>
-                            </thead>
-                            <tbody>
-                                { this.state.table_data.map((asteroid) => (
-                                    <tr key={asteroid.id}>
-                                        <td>{asteroid.name}</td>
-                                        <td>{asteroid.estimated_diameter}</td>
-                                        <td>{asteroid.close_approach_date_time}</td>
-                                        <td>{asteroid.velocity}</td>
-                                        <td>{asteroid.distance_to_earth}</td>
-                                        <td>{asteroid.potentiall_hazard}</td>
-                                    </tr>
-                                ))}
-                            </tbody>
-                        </Table>
-                    </Col>
+                    {this.state.asteroidDataIsLoading ?
+                        <Spinner className="mx-auto my-5" animation="border"/> :
+                        <Col>
+                            <Table striped borderless variant="dark" className="w-100">
+                                <thead>
+                                <tr>
+                                    { this.state.headers.map((header, index) => (
+                                        <th key={index}>{header}</th>
+                                    )) }    
+                                </tr>
+                                </thead>
+                                <tbody>
+                                    { this.state.table_data.map((asteroid) => (
+                                        <tr key={asteroid.id}>
+                                            <td>{asteroid.name}</td>
+                                            <td>{asteroid.estimated_diameter}</td>
+                                            <td>{asteroid.close_approach_date_time}</td>
+                                            <td>{asteroid.velocity}</td>
+                                            <td>{asteroid.distance_to_earth}</td>
+                                            <td>{asteroid.potentiall_hazard}</td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </Table>
+                        </Col>
+                    }
                 </Row>
             </Container>
         )
