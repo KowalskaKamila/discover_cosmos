@@ -1,7 +1,6 @@
 import React from 'react';
 import { Container, Row, Col, Figure, Spinner } from 'react-bootstrap';
 import axios from 'axios';
-// import api from './../api'
 import '../styles/ImageOfTheDay.css';
 
 
@@ -17,7 +16,8 @@ export default class ImageOfTheDay extends React.Component {
 
     async getThePictureOfTheDay() {
         this.setState({imageDataIsLoading: true})
-        const response = await axios.get("https://api.nasa.gov/planetary/apod?api_key=rRrzSpxY8WVmhsmfYml0fXtSq5bLhTVBb7rhjL8v");
+        const key = ""
+        const response = await axios.get("https://api.nasa.gov/planetary/apod?api_key=" + key);
         this.setState({imageDataIsLoading: false})
         this.setState({ picture_info: response.data})
     }

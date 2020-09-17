@@ -19,13 +19,14 @@ export default class AsteroidTable extends React.Component {
     async asteoridWatch() {
         this.setState({asteroidDataIsLoading: true})
         const today = moment().format("YYYY-MM-DD")
-        const response = await axios.get("https://api.nasa.gov/neo/rest/v1/feed?start_date="+ today + "&end_date=" + today + "&api_key=rRrzSpxY8WVmhsmfYml0fXtSq5bLhTVBb7rhjL8v")
+        const key= ""
+        const response = await axios.get("https://api.nasa.gov/neo/rest/v1/feed?start_date="+ today + "&end_date=" + today + "&api_key=" + key)
         this.setState({asteroidDataIsLoading: false})
         this.setState({asteroids_data: response.data.near_earth_objects[today]})
         this.setTableData()
     }
 
-    setTableData(){
+    setTableData() {
         const asteroids = this.state.asteroids_data
         const steroids_new_data = []
         for (let i=0; i < asteroids.length; i++ ) {
