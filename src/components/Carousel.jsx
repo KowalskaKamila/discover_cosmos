@@ -38,7 +38,7 @@ export default class ImageOfTheDay extends React.Component {
 
     render() {
         return (
-            <Container fluid className={!this.props.isNews ? "r4-events" : "r4-news" } >
+            <Container fluid className="h-auto ">
                 <Row>
                     <Col className="text-center my-5">
                         <h1 className="text-uppercase"> {this.props.title} </h1>
@@ -66,25 +66,20 @@ export default class ImageOfTheDay extends React.Component {
                             { this.props.carousel_items.map((item,index) => (         
                                 <Card key={index} className="mx-2 border-0">
                                     <Card.Img variant="top" src={item.featured_image} />
-                                    <Card.Body className={this.props.isNews ? "card-body-news" : "card-body-events"}>
+                                    <Card.Body className={this.props.isNews ? "card-body-news " : "card-body-events"}>
                                         <Card.Title className="font-weight-bold">{item.title}</Card.Title>
-                                            {!this.props.isNews  &&
-                                                <Card.Subtitle >
-                                                    <span className="mt-5"> {item.description}</span>
-                                                </Card.Subtitle>
-                                            }
-                                        <Row className="positioning w-100">
-                                            <Col md={5}>
-                                            {item.url &&
-                                                <Button href={item.url} variant="primary" className="text-uppercase" >Read More</Button>
-                                            }
-                                            </Col>
-                                            <Col md={7}>
-                                                <Card.Text>
-                                                    <span className="mt-5"> {this.props.isNews ? this.convertDateToUtc(item.date_published) + " | " + item.news_site_long : item.news_site_long}</span>
-                                                </Card.Text>
-                                            </Col>
-                                        </Row>
+                                        {!this.props.isNews  &&
+                                            <Card.Subtitle >
+                                                <span className="mt-5"> {item.description}</span>
+                                            </Card.Subtitle>
+                                        }
+                                        <br/>
+                                        {item.url &&
+                                            <Button href={item.url} variant="primary" className="text-uppercase" >Read More</Button>
+                                        }
+                                        <Card.Text>
+                                            <span className="mt-5 ml-5"> {this.props.isNews ? this.convertDateToUtc(item.date_published) + " | " + item.news_site_long : item.news_site_long}</span>
+                                        </Card.Text>
                                     </Card.Body>
                                 </Card>
                             )) }

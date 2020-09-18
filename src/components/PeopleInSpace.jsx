@@ -27,7 +27,7 @@ export default class PeopleInSpace extends React.Component {
 
     render() {
         return (
-            <Container fluid className="r6">
+            <Container fluid className="h-75 margin-bottom">
                 <Row>
                     <Col className="text-center my-5">
                         <h1 className="text-uppercase"> How Many People Are In Space Right Now? </h1>

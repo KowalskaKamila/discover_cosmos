@@ -1,9 +1,3 @@
-.r4-news {
-    min-height: 90vh;
-}
-.r4-events{
-    min-height: 100vh;
-}
 .react-multiple-carousel__arrow--right {
     right: 0px;
     top: 25%;
@@ -24,10 +18,10 @@
     color:black;
 }
 .card-body-events {
-    height: 22vw;
+    min-height: 21vw !important;
 }
 .card-body-news {
-    height: 12vw;
+    min-height: 12vw !important;
 }
 .positioning {
     position: absolute;

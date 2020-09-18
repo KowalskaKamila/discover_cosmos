@@ -28,7 +28,7 @@ export default class ImageOfTheDay extends React.Component {
      
     render() {
         return (
-            <Container fluid className="r2"> 
+            <Container fluid className="h-75 margin-bottom"> 
                 <Row>
                     <Col className="text-center my-5">
                         <h1 className="text-uppercase"> Astronomy Picture of the Day </h1>

@@ -4,7 +4,7 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 const Title = () => {
     return (
-        <Container fluid className="r1">
+        <Container fluid className="h-100 margin-bottom">
         <Row>
             <Col>
                 <div className="blinking_text">

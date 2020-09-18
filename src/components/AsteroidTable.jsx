@@ -62,7 +62,7 @@ export default class AsteroidTable extends React.Component {
 
     render() {
         return (
-            <Container fluid className="r3">
+            <Container fluid className="h-100 margin-bottom">
                 <Row>
                     <Col className="text-center my-5">
                         <h1 className="text-uppercase"> Real-Time Asteroid Watch </h1>
