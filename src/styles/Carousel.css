@@ -21,7 +21,7 @@
     min-height: 21vw !important;
 }
 .card-body-news {
-    min-height: 12vw !important;
+    min-height: 13vw !important;
 }
 .positioning {
     position: absolute;
@@ -31,4 +31,9 @@
 .card-text:last-child {
     margin-top:10px;
     text-align: end;
+}
+.position{
+    position: absolute;
+    bottom: 0;
+    right: 0;
 }

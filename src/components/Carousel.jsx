@@ -77,7 +77,7 @@ export default class ImageOfTheDay extends React.Component {
                                         {item.url &&
                                             <Button href={item.url} variant="primary" className="text-uppercase" >Read More</Button>
                                         }
-                                        <Card.Text>
+                                        <Card.Text className="position mb-3 mr-3">
                                             <span className="mt-5 ml-5"> {this.props.isNews ? this.convertDateToUtc(item.date_published) + " | " + item.news_site_long : item.news_site_long}</span>
                                         </Card.Text>
                                     </Card.Body>
