@@ -6,7 +6,6 @@ import Title from './components/Title';
 import PeopleInSpace from './components/PeopleInSpace';
 import { Container, Row, Col, Spinner } from 'react-bootstrap';
 import axios from 'axios';
-import PropTypes from 'prop-types';
 import './App.css';
 
 export default class App extends React.Component {
@@ -141,16 +140,3 @@ export default class App extends React.Component {
     );
   }
 }
-
-App.propTypes = {
-  carousel_items: PropTypes.array,
-  title: PropTypes.string,
-  isNews: PropTypes.bool,
-};
-
-App.defaultProps = {
-  carousel_items: [],
-  title: "",
-  isNews: false
-}
-

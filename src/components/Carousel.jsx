@@ -4,6 +4,7 @@ import { Container, Row, Col, Card, Button } from 'react-bootstrap';
 import moment from 'moment';
 import "react-multi-carousel/lib/styles.css";
 import '../styles/Carousel.css';
+import PropTypes from 'prop-types';
 
 
 const responsive = {
@@ -24,7 +25,7 @@ const responsive = {
     }
 };
 
-export default class ImageOfTheDay extends React.Component {
+export default class NewsCarousel extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
@@ -90,3 +91,16 @@ export default class ImageOfTheDay extends React.Component {
         )
     }    
 }
+
+NewsCarousel.propTypes = {
+    carousel_items: PropTypes.array,
+    title: PropTypes.string,
+    isNews: PropTypes.bool,
+};
+  
+NewsCarousel.defaultProps = {
+    carousel_items: [],
+    title: "",
+    isNews: false
+  }
+  
